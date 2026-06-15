@@ -1,0 +1,53 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Layout:
+
+┌─────────────┬──────────────────────────────┐
+│             │ Navbar                       │
+│ Sidebar     ├──────────────────────────────┤
+│             │                              │
+│ Navigation  │ Dynamic Content Window       │
+│             │                              │
+│             │                              │
+└─────────────┴──────────────────────────────┘
+
+
+Authentication
+├── Login
+└── Signup
+
+Dashboard Layout
+├── Sidebar
+│   ├── Dashboard
+│   ├── History
+│   ├── Analytics
+│   ├── Export
+│   └── Profile
+|
+└── Content Area
+    └── Dynamic Pages
+
+Navbar
+├── Theme Toggle
+└── User Menu
+
+
+flow: 
+
+1- start:
+
+    Not Logged In
+    ↓
+    Login / Signup
+    ↓
+    Dashboard
+
+2- registered 
+
+    Login
+    ↓
+    Dashboard -> change url but if not login -> relogin 
+    ↓
+    refreshes
+    ↓
+    if login then closed browser/backward/session timeout 
+    ↓
+    relogin

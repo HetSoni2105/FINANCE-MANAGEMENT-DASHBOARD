@@ -1,0 +1,5 @@
+dotenv
+mongoose
+express
+cors
+bcryptjs
