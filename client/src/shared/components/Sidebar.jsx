@@ -11,7 +11,7 @@ function Sidebar(){
   }
   return (<>
         <div style={{ width: 300}} 
-        className='text-white text-2xl h-250 bg-black mr-0 flex flex-col justify-between'>
+        className='text-white text-2xl min-h-screen bg-black mr-0 flex flex-col justify-between'>
           <div className='m-12 flex flex-wrap flex-col'>
             <p>sidebar</p>
             <Link to='/dashboard'>Dashboard</Link>

@@ -207,3 +207,26 @@ From
 To
 Status
 Note
+
+
+## Relationship in type-category
+
+income(type)
+|-salary
+|-bonus
+|-investment
+
+expense(type)
+|-food
+|-transport
+|-shopping
+|-entertainment
+|-health
+|-education
+|-bills
+
+debt(type)
+|-personal loans
+|-borrowed
+|-lent
+|-credit
