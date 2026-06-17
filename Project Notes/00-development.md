@@ -124,8 +124,60 @@ Phase 3 — Add Transaction
 
 ### Notes
 - Public vs Protected routes.: confused, have to differentiate
-- Browser refresh behavior : it doesnot logout on refresh even can backtrack
+- Browser refresh behavior : it does not logout on refresh even can backtrack
 - Logout flow.: hasn't made the way to logut but has backend
 - JWT expiration behavior.: right now 7d research what is correct
+
+---
+
+## Day-6
+
+### Date:
+16-06-2026
+
+### Current Phase 
+Phase 3 — Add Transaction
+Goal:
+    Create financial records.
+
+### Status
+In progress
+
+### Last Completed
+- Phase 0 — project setup
+- Phase 1 - Layout implementation
+- Phase 2 — Authentication
+
+### Next step
+Phase 4 — View Transactions
+
+### Notes
+make decison which format to use for add expense
+
+---
+
+## Day-7
+
+### Date:
+17-06-2026
+
+### Current Phase 
+Phase 3 — Add Transaction
+Goal:
+    Create financial records.
+
+### Status
+In progress
+
+### Last Completed
+- Phase 0 — project setup
+- Phase 1 - Layout implementation
+- Phase 2 — Authentication
+
+### Next step
+Phase 4 — View Transactions
+
+### Notes
+make decison which format to use for add expense
 
 ---

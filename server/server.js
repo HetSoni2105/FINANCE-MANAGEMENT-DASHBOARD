@@ -4,7 +4,8 @@ import mongoose from 'mongoose'
 import cors from 'cors'
 import bcrypt from 'bcryptjs'
 import User from './models/user.js'
-import { protect } from '../client/src/Feature/auth/middleware/authtoken.js'
+import { protect } from './middleware/authtoken.js'
+import jwt from 'jsonwebtoken'
 
 
 const app =express()
@@ -46,7 +47,11 @@ app.post('/auth/login', async (req,res) => {
         const match = await bcrypt.compare(password, user.password)
         if( !match)
             return res.status(401).json({error: "Invalid email or password"})
-        res.json({id: user._id, name: user.name, email: user.email})
+
+        const token = jwt.sign({ id: user._id },process.env.JWT_SECRET,
+           { expiresIn: '7d' });
+
+        res.json({token: token,user: {id: user._id, name: user.name, email: user.email}})
     }catch(err){
         return res.status(500).json({error: err.message});
     }

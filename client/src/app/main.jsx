@@ -7,6 +7,7 @@ import {
   Navigate,
   RouterProvider,
   Outlet,
+  replace,
 } from "react-router-dom";
 import Layout from "./Layout.jsx";
 import Dashboard from "../Feature/dashboard/components/dashboard.jsx";
@@ -16,8 +17,12 @@ import Export from "../Feature/Export/components/Export.jsx";
 import Profile from "../Feature/Profile/components/Profile.jsx";
 import Register from "../Feature/auth/components/Register.jsx";
 import Login from "../Feature/auth/components/Login.jsx";
-import { AuthContextProvider } from "../Feature/auth/components/AuthContext.jsx";
-
+import {
+  AuthContextProvider,
+  useAuth,
+} from "../Feature/auth/components/AuthContext.jsx";
+import ProtectedRoute from "../Feature/auth/components/protectedRoute.jsx";
+import AddExpense from "../shared/components/AddExpense.jsx";
 // ── new: a root wrapper that puts AuthContextProvider INSIDE the router ──
 function RootProvider() {
   return (
@@ -32,35 +37,43 @@ const router = createBrowserRouter([
     element: <RootProvider />, // ← wraps EVERYTHING below
     children: [
       {
+        // element: <protectedroute/>
+        //children: [{}]
         path: "/",
         element: <Layout />,
         children: [
-          { index: true, 
-            element: <Navigate to="/login" replace /> },
-          { 
-            path: "dashboard", 
-            element: <Dashboard /> 
+          {
+            index:true,
+            element: <Navigate to="/dashboard" replace />
           },
-          { 
-            path: "history", 
-            element: <History /> 
+          {
+            path: "dashboard",
+            element: <Dashboard />,
           },
-          { 
-            path: "analytics", 
-            element: <Analytics /> 
+          {
+            path: "history",
+            element: <History />,
           },
-          { 
-            path: "export", 
-            element: <Export /> 
+          {
+            path: "analytics",
+            element: <Analytics />,
           },
-          { 
-            path: "profile", 
-            element: <Profile /> 
+          {
+            path: "export",
+            element: <Export />,
+          },
+          {
+            path: "profile",
+            element: <Profile />,
+          },
+          {
+            path: "addExpense",
+            element: <AddExpense />,
           },
         ],
       },
-      { path: "login", element: <Login /> },
-      { path: "register", element: <Register /> },
+      // { path: "login", element: <Login /> },
+      // { path: "register", element: <Register /> },
     ],
   },
 ]);

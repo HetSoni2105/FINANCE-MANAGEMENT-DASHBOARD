@@ -232,7 +232,7 @@ User authentication works.
 
 Status:
 
-Started
+completed
 
 ---
 
@@ -261,7 +261,7 @@ Transactions can be stored.
 
 Status:
 
-⬜ Not Started
+started
 
 ---
 

@@ -1,4 +1,4 @@
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Layout:
+Layout:
 
 ┌─────────────┬──────────────────────────────┐
 │             │ Navbar                       │
@@ -48,6 +48,15 @@ flow:
     ↓
     refreshes
     ↓
-    if login then closed browser/backward/session timeout 
+    if login and then closed browser/backward/session timeout 
     ↓
     relogin
+
+
+3- add expense
+
+    add expense clicked
+    ↓
+    form 
+    ↓
+    give to server and store in db

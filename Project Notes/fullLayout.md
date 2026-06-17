@@ -196,3 +196,14 @@ Category
 ├── Salary
 ├── Investment
 └── Other
+
+## Form Format
+
+Amount
+Date 
+Type
+Category
+From
+To
+Status
+Note
