@@ -123,9 +123,9 @@ In progress
 Phase 3 — Add Transaction
 
 ### Notes
-Public vs Protected routes.: confused, have to differentiate
-Browser refresh behavior : it doesnot logout on refresh even can backtrack
-Logout flow.: hasn't made the way to logut but has backend
-JWT expiration behavior.: right now 7d research what is correct
+- Public vs Protected routes.: confused, have to differentiate
+- Browser refresh behavior : it doesnot logout on refresh even can backtrack
+- Logout flow.: hasn't made the way to logut but has backend
+- JWT expiration behavior.: right now 7d research what is correct
 
 ---
