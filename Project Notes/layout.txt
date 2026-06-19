@@ -81,3 +81,16 @@ History:
 └────────────────────────────────────────────────────────────────────┘
 Showing 1–10 of 145 transactions
 
+Type
+├── Income
+├── Expense
+└── Debt
+
+Category
+├── Food
+├── Salary
+├── Salary
+├── Salary
+├── Salary
+├── Salary
+└── Shopping

@@ -127,7 +127,7 @@ In progress
 - Phase 1 - Layout implementation
 
 ### Work
-- 
+-   add jwt and middleware protection to the authentication
 
 ### Next step
 Phase 3 — Add Transaction
@@ -152,6 +152,9 @@ Goal:
 
 ### Status
 In progress
+
+### Work
+- research the format or layout of expense form
 
 ### Last Completed
 - Phase 0 — project setup
@@ -179,6 +182,9 @@ Goal:
 ### Status
 In progress
 
+### Work
+- made a permanent layout 
+
 ### Last Completed
 - Phase 0 — project setup
 - Phase 1 - Layout implementation
@@ -204,6 +210,10 @@ Goal:
 
 ### Status
 completed
+
+### Work
+- debugged the jwt and authentication and added api 
+    to connect and insert record enteries
 
 ### Last Completed
 - Phase 0 — project setup
@@ -234,6 +244,9 @@ Goal:
 ### Status
 In progress
 
+### Work
+- research the layout/ui of history where the records are viewed
+
 ### Last Completed
 - Phase 0 — project setup
 - Phase 1 - Layout implementation
@@ -241,7 +254,7 @@ In progress
 - Phase 3 — Add Transaction
 
 ### Next step
-Phase 4 — View Transactions
+Phase 5 — Edit Transaction
 
 ### Notes
 make decison which format to use for add expense
