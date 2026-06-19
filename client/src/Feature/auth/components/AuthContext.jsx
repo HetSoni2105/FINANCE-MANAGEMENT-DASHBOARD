@@ -1,26 +1,29 @@
 // context/AuthContext.jsx
-import { createContext, useContext, useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { authService } from './AuthService';
+import { createContext, useContext, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { authService } from "../service/AuthService";
 
 const AuthContext = createContext();
 
 export function AuthContextProvider({ children }) {
-  const [user, setUser]       = useState(null);
+  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError]     = useState(null);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   // on mount — verify token is still valid against the server
   useEffect(() => {
     const verify = async () => {
       const token = authService.getToken();
-      if (!token) { setLoading(false); return; }
+      if (!token) {
+        setLoading(false);
+        return;
+      }
 
       try {
         const freshUser = await authService.getMe(token); // re-checks with server
         setUser(freshUser);
-      } catch {
+      } catch (err){
         authService.clearSession(); // token expired or invalid
       } finally {
         setLoading(false);
@@ -33,7 +36,7 @@ export function AuthContextProvider({ children }) {
     setError(null);
     try {
       await authService.register(data);
-      navigate('/login'); // go to login after registering
+      navigate("/login"); // go to login after registering
     } catch (err) {
       setError(err.message);
       throw err;
@@ -44,9 +47,11 @@ export function AuthContextProvider({ children }) {
     setError(null);
     try {
       const { token, user } = await authService.login(credentials);
+
       authService.persistSession({ token, user });
+
       setUser(user);
-      navigate('/dashboard'); // ← navigation happens here
+      navigate("/dashboard"); // ← navigation happens here
     } catch (err) {
       setError(err.message);
       throw err;
@@ -57,11 +62,13 @@ export function AuthContextProvider({ children }) {
     await authService.logout();
     authService.clearSession();
     setUser(null);
-    navigate('/login');
+    navigate("/login");
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, error, login, register, logout }}>
+    <AuthContext.Provider
+      value={{ user, loading, error, login, register, logout }}
+    >
       {!loading && children}
     </AuthContext.Provider>
   );

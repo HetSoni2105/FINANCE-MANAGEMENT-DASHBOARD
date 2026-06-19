@@ -6,7 +6,9 @@ import bcrypt from 'bcryptjs'
 import User from './models/user.js'
 import { protect } from './middleware/authtoken.js'
 import jwt from 'jsonwebtoken'
+import Transaction from './models/transaction.js'
 
+// add this temporarily at the top of server.js
 
 const app =express()
 app.use(cors({origin: 'http://localhost:5173'}))
@@ -64,6 +66,25 @@ app.get('/auth/me', protect, async (req, res) => {
   res.json({ id: user._id, name: user.name, email: user.email });
 });
 
+app.post('/api/transaction',protect, async (req,res) => {
+    try{const {date, amount, from, to , type, category, status, note} = req.body;
+    
+    const exists = await Transaction.findOne
+    ({userId : req.userId,date,amount,from,to,type,category,status,note,});
+
+    if (exists){
+         return res.status(409).json({ error: 'This transaction already exists' });
+    }
+
+    const transaction = await Transaction.create(
+        {userId : req.userId,date,amount,from,to,type,category,status,note,}
+    );
+    res.status(201).json(transaction);}
+    catch(err){
+            res.status(500).json({ error: err.message });
+    }
+})
+
 app.listen(process.env.PORT, () =>
-  console.log(`Auth server running on :${process.env.PORT}`)
+    console.log(`Auth server running on :${process.env.PORT}`)
 );

@@ -69,11 +69,15 @@ In progress
 - Phase 0 — project setup
 - Phase 1 - Layout implementation
 
+### Work
+- created login ui
+
 ### Next step
 Phase 3 — Add Transaction
 
 ### Notes
-needs to think how to do authentication.
+needs to think how to do better authentication.
+
 
 ---
 
@@ -93,6 +97,9 @@ In progress
 ### Last Completed
 - Phase 0 — project setup
 - Phase 1 - Layout implementation
+
+### Work
+- created register ui and authentication files that works as middleware for accessing.
 
 ### Next step
 Phase 3 — Add Transaction
@@ -118,6 +125,9 @@ In progress
 ### Last Completed
 - Phase 0 — project setup
 - Phase 1 - Layout implementation
+
+### Work
+- 
 
 ### Next step
 Phase 3 — Add Transaction
@@ -173,6 +183,62 @@ In progress
 - Phase 0 — project setup
 - Phase 1 - Layout implementation
 - Phase 2 — Authentication
+
+### Next step
+Phase 4 — View Transactions
+
+### Notes
+make decison which format to use for add expense
+
+---
+
+## Day-8
+
+### Date:
+18-06-2026
+
+### Current Phase 
+Phase 3 — Add Transaction
+Goal:
+    Create financial records.
+
+### Status
+completed
+
+### Last Completed
+- Phase 0 — project setup
+- Phase 1 - Layout implementation
+- Phase 2 — Authentication
+
+### Next step
+Phase 4 — View Transactions
+
+### Notes
+   - Can React state determine whether category is available?
+     Who owns the UI state?
+
+   - What defines duplicate?
+     Can a user spend exactly ₹100 twice today?
+---
+
+## Day-9
+
+### Date:
+19-06-2026
+
+### Current Phase 
+Phase 4 — View Transactions
+Goal:
+    Create financial records.
+
+### Status
+In progress
+
+### Last Completed
+- Phase 0 — project setup
+- Phase 1 - Layout implementation
+- Phase 2 — Authentication
+- Phase 3 — Add Transaction
 
 ### Next step
 Phase 4 — View Transactions

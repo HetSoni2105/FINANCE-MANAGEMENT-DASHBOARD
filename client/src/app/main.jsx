@@ -37,11 +37,11 @@ const router = createBrowserRouter([
     element: <RootProvider />, // ← wraps EVERYTHING below
     children: [
       {
-        // element: <protectedroute/>
-        //children: [{}]
-        path: "/",
-        element: <Layout />,
-        children: [
+        element: <ProtectedRoute/>,
+        children: [{
+              path: "/",
+            element: <Layout />,
+            children: [
           {
             index:true,
             element: <Navigate to="/dashboard" replace />
@@ -71,9 +71,9 @@ const router = createBrowserRouter([
             element: <AddExpense />,
           },
         ],
-      },
-      // { path: "login", element: <Login /> },
-      // { path: "register", element: <Register /> },
+      }]},
+      { path: "login", element: <Login /> },
+      { path: "register", element: <Register /> },
     ],
   },
 ]);

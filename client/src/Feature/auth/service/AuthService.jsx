@@ -27,19 +27,19 @@ export const authService = {
 
   // ── token storage ──────────────────────────────────────
   persistSession: ({ token, user }) => {
-    sessionStorage.setItem('token', token);
-    sessionStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem('token', token);
+    localStorage.setItem('user', JSON.stringify(user));
   },
 
-  getToken: () => sessionStorage.getItem('token'),
+  getToken: () => localStorage.getItem('token'),
 
   getStoredUser: () => {
-    const raw = sessionStorage.getItem('user');
+    const raw = localStorage.getItem('user');
     return raw ? JSON.parse(raw) : null;
   },
 
   clearSession: () => {
-    sessionStorage.removeItem('token');
-    sessionStorage.removeItem('user');
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
   },
 };

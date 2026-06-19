@@ -74,6 +74,7 @@ Note
 2. Type 
 3. Category
 4. status
+5. sort by
 
 ### Action
 - view
@@ -164,7 +165,8 @@ Export
 
 Profile
 
-## Records Format
+## Records Format - display in History  
+Index/SrNo -optional
 Date
 Type
 Category

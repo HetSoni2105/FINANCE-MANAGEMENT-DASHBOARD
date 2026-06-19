@@ -1,5 +1,5 @@
 // services/api.js
-import { authService } from '../components/authService';
+import { authService } from "../service/AuthService";
 
 export const apiRequest = async (path, options = {}) => {
   const token = authService.getToken();
@@ -7,7 +7,7 @@ export const apiRequest = async (path, options = {}) => {
   const res = await fetch(`http://localhost:4000${path}`, {
     ...options,
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
       ...options.headers,
     },
@@ -15,9 +15,12 @@ export const apiRequest = async (path, options = {}) => {
 
   if (res.status === 401) {
     authService.clearSession();
-    window.location.href = '/login'; // force re-login on token expiry
+    window.location.href = "/login"; // force re-login on token expiry
     return;
   }
+  const data = await res.json()
 
-  return res.json();
+   if (!res.ok) throw new Error(data.error || 'Request failed');
+
+  return data
 };

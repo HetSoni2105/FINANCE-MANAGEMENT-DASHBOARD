@@ -4,7 +4,7 @@ import { useAuth } from './AuthContext';
 
 export default function ProtectedRoute() {
   const { user, loading } = useAuth();
+  
   if (loading) return <div>Loading...</div>; // verifying token, avoid flash redirect
-  console.log("hello")
   return user ? <Outlet/> : <Navigate to="/login" />;
 }
